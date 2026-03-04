@@ -1,117 +1,206 @@
-:root {
-    --bg-color: #0b0f1a;
-    --card-bg: #161d2f;
-    --primary-blue: #3b82f6; /* Warna biru pengganti kuning */
-    --text-white: #ffffff;
-    --text-muted: #94a3b8;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-white);
-    font-family: 'Segoe UI', Roboto, sans-serif;
-    margin: 0;
+    background-color: #000000; /* Hitam Pekat */
+    color: white;
 }
 
 /* NAVBAR */
 .navbar {
-    background: #0f172a;
-    padding: 12px 20px;
-    border-bottom: 1px solid #1e293b;
+    background-color: #0a0a0a;
+    padding: 15px 5%;
+    border-bottom: 1px solid #1a1a1a;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-.nav-container { max-width: 1100px; margin: 0 auto; }
-
-/* Desktop Logo & Menu */
-.logo-desktop { font-weight: bold; font-size: 22px; color: var(--primary-blue); font-style: italic; }
-.logo-desktop span { color: white; }
-.nav-menu { display: flex; align-items: center; gap: 20px; }
-.search-box { background: #1e293b; padding: 6px 12px; border-radius: 8px; display: flex; align-items: center; }
-.search-box input { background: transparent; border: none; color: white; margin-left: 8px; outline: none; }
-
-/* Mobile Header */
-.mobile-header { display: none; justify-content: space-between; align-items: center; }
-.logo-circle { background: var(--primary-blue); padding: 5px 10px; border-radius: 8px; font-weight: bold; }
-
-/* LOBBY CONTENT */
-.lobby-container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
-
-.banner { position: relative; border-radius: 15px; overflow: hidden; margin-bottom: 30px; }
-.banner img { width: 100%; border: 1px solid #1e293b; border-radius: 15px; }
-
-.section-title { font-size: 16px; font-weight: bold; margin-bottom: 15px; border-left: 4px solid var(--primary-blue); padding-left: 10px; }
-
-/* GRID SYSTEM - MEMANJANG */
-.grid-3-col {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 25px;
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* EFEK STROKE & CARD */
-.card-item {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    border: 2px solid transparent; /* Stroke awal transparan */
-    transition: all 0.3s ease;
+.store-logo img {
+    height: 40px; /* Atur tinggi logo/animasi kamu */
+    object-fit: contain;
+}
+
+.nav-right {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 20px;
+}
+
+.search-bar {
+    background: #111;
+    border: 1px solid #222;
+    padding: 5px 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    width: 100px;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    color: #3b82f6; /* Warna biru */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* BANNER LAYERS */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.banner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.banner-box {
+    height: 180px;
+    background: #0d0d0d;
+    border: 1px dashed #333;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+}
+
+/* CATEGORY & OPTIONS */
+.category-section {
+    margin-bottom: 30px;
+}
+
+.category-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #3b82f6;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.options-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
 
-/* Saat Kursor di sekitar atau Klik */
-.card-item:hover, .card-item:active {
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
-    transform: translateY(-3px);
+.options-row.single {
+    grid-template-columns: 1fr;
 }
 
-.card-item img {
-    width: 60px;
-    height: 60px;
+/* OPSI CARD DENGAN STROKE BIRU */
+.option-card {
+    background: #0d0d0d;
+    border: 2px solid #1a1a1a; /* Stroke awal gelap */
+    padding: 12px;
     border-radius: 10px;
-    object-fit: cover;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s ease;
 }
 
-.card-item span { font-size: 12px; font-weight: bold; }
+/* Efek saat diklik/hover */
+.option-card:hover, .option-card:active {
+    border-color: #3b82f6; /* Stroke Biru */
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
 
-.card-item.wide { width: 100%; display: block; }
-.flex-row { display: flex; align-items: center; gap: 20px; }
+.img-placeholder {
+    width: 40px;
+    height: 40px; /* Ukuran 1x1 sesuai permintaan */
+    background: #1a1a1a;
+    border-radius: 6px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.option-card span {
+    font-size: 13px;
+    font-weight: 700;
+}
 
 /* SIDEBAR */
 .sidebar {
     position: fixed;
     right: -100%;
     top: 0;
-    width: 260px;
+    width: 280px;
     height: 100%;
-    background: #0f172a;
-    z-index: 200;
-    transition: 0.4s;
-    padding: 20px;
+    background: #000;
+    border-left: 1px solid #1a1a1a;
+    z-index: 1000;
+    transition: 0.3s;
+    padding: 40px 20px;
 }
+
 .sidebar.active { right: 0; }
-.sidebar-header { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 30px; }
-.sidebar-links a { display: block; color: white; text-decoration: none; padding: 15px 0; border-bottom: 1px solid #1e293b; }
 
-/* RESPONSIVE DESKTOP VS HP */
-@media (max-width: 768px) {
-    .logo-desktop, .nav-menu { display: none; }
-    .mobile-header { display: flex; }
-    .grid-3-col { grid-template-columns: repeat(3, 1fr); } /* Tetap 3 kolom kecil memanjang */
+.sidebar-content a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 25px;
 }
 
+#closeBtn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+/* RESPONSIVE DESKTOP */
 @media (min-width: 769px) {
-    .nav-container { display: flex; justify-content: space-between; align-items: center; }
-    .grid-3-col { grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .card-item img { width: 80px; height: 80px; }
-                    }
+    .hamburger { display: none; }
+    
+    .menu-desktop {
+        display: flex;
+        gap: 25px;
+    }
+
+    .menu-desktop a {
+        color: white;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .menu-desktop a:hover { color: #3b82f6; }
+
+    .search-bar { width: 250px; }
+    .search-bar input { width: 100%; }
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+    .menu-desktop { display: none; }
+}
