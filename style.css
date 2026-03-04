@@ -1,206 +1,81 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+body { background-color: #000; color: white; overflow-x: hidden; }
 
-body {
-    background-color: #000000; /* Hitam Pekat */
-    color: white;
-}
+/* NAVBAR & LOGO */
+.navbar { background: #0a0a0a; padding: 15px 5%; border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 1000; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+.store-logo img { height: 40px; object-fit: contain; }
 
-/* NAVBAR */
-.navbar {
-    background-color: #0a0a0a;
-    padding: 15px 5%;
-    border-bottom: 1px solid #1a1a1a;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+.nav-right { display: flex; align-items: center; gap: 20px; }
+.search-bar { background: #111; border: 1px solid #222; padding: 5px 12px; border-radius: 6px; display: flex; align-items: center; }
+.search-bar input { background: transparent; border: none; color: white; outline: none; width: 100px; }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+/* SLIDER BANNER */
+.banner-container { position: relative; width: 100%; height: 200px; overflow: hidden; border-radius: 12px; margin-bottom: 30px; border: 1px solid #1a1a1a; }
+.slider { display: flex; width: 400%; height: 100%; transition: transform 0.5s ease-in-out; }
+.slide { width: 100%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; color: #333; }
+.bg-1 { background: #111; } .bg-2 { background: #161616; } .bg-3 { background: #0d0d0d; } .bg-4 { background: #1a1a1a; }
 
-.store-logo img {
-    height: 40px; /* Atur tinggi logo/animasi kamu */
-    object-fit: contain;
-}
+.dots { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+.dot { width: 8px; height: 8px; background: #333; border-radius: 50%; transition: 0.3s; }
+.dot.active { background: #3b82f6; width: 20px; border-radius: 10px; }
 
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
+/* CATEGORY TITLE */
+.container { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
+.category-title { font-size: 14px; font-weight: 800; color: #3b82f6; margin-bottom: 15px; letter-spacing: 1px; }
 
-.search-bar {
-    background: #111;
-    border: 1px solid #222;
-    padding: 5px 12px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-}
-
-.search-bar input {
-    background: transparent;
-    border: none;
-    color: white;
-    outline: none;
-    width: 100px;
-}
-
-.hamburger {
-    background: none;
-    border: none;
-    color: #3b82f6; /* Warna biru */
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* BANNER LAYERS */
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 15px;
-}
-
-.banner-grid {
+/* GRID UTAMA (RESPONSIVE) */
+.options-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-.banner-box {
-    height: 180px;
-    background: #0d0d0d;
-    border: 1px dashed #333;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #444;
-}
-
-/* CATEGORY & OPTIONS */
-.category-section {
-    margin-bottom: 30px;
-}
-
-.category-title {
-    font-size: 14px;
-    font-weight: 800;
-    color: #3b82f6;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-}
-
-.options-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
 
-.options-row.single {
-    grid-template-columns: 1fr;
-}
-
-/* OPSI CARD DENGAN STROKE BIRU */
+/* OPSI CARD & STROKE BIRU */
 .option-card {
     background: #0d0d0d;
-    border: 2px solid #1a1a1a; /* Stroke awal gelap */
+    border: 2px solid #1a1a1a;
     padding: 12px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     text-decoration: none;
     color: white;
-    transition: all 0.2s ease;
+    transition: 0.2s;
 }
 
-/* Efek saat diklik/hover */
+/* EFEK STROKE SAAT DI PENCET / HOVER */
 .option-card:hover, .option-card:active {
-    border-color: #3b82f6; /* Stroke Biru */
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    border-color: #3b82f6;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
 }
 
-.img-placeholder {
-    width: 40px;
-    height: 40px; /* Ukuran 1x1 sesuai permintaan */
-    background: #1a1a1a;
-    border-radius: 6px;
-    margin-right: 12px;
-    flex-shrink: 0;
-}
+.img-1x1 { width: 45px; height: 45px; background: #1a1a1a; border-radius: 8px; margin-right: 12px; flex-shrink: 0; border: 1px solid #333; }
+.option-card span { font-size: 12px; font-weight: bold; }
 
-.option-card span {
-    font-size: 13px;
-    font-weight: 700;
-}
-
-/* SIDEBAR */
-.sidebar {
-    position: fixed;
-    right: -100%;
-    top: 0;
-    width: 280px;
-    height: 100%;
-    background: #000;
-    border-left: 1px solid #1a1a1a;
-    z-index: 1000;
-    transition: 0.3s;
-    padding: 40px 20px;
-}
-
+/* SIDEBAR MOBILE */
+.sidebar { position: fixed; right: -100%; top: 0; width: 280px; height: 100%; background: #000; border-left: 1px solid #1a1a1a; z-index: 2000; transition: 0.3s; padding: 40px 20px; }
 .sidebar.active { right: 0; }
+.sidebar-content a { display: block; color: white; text-decoration: none; font-size: 18px; font-weight: bold; margin-bottom: 25px; }
+.hamburger { background: none; border: none; color: #3b82f6; font-size: 24px; cursor: pointer; }
+#closeBtn { background: none; border: none; color: white; font-size: 30px; margin-bottom: 30px; cursor: pointer; }
 
-.sidebar-content a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 25px;
-}
+/* --- ATURAN LAYOUT HP VS DESKTOP --- */
 
-#closeBtn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 30px;
-    margin-bottom: 30px;
-}
-
-/* RESPONSIVE DESKTOP */
-@media (min-width: 769px) {
-    .hamburger { display: none; }
-    
-    .menu-desktop {
-        display: flex;
-        gap: 25px;
-    }
-
-    .menu-desktop a {
-        color: white;
-        text-decoration: none;
-        font-size: 13px;
-        font-weight: 600;
-    }
-
-    .menu-desktop a:hover { color: #3b82f6; }
-
-    .search-bar { width: 250px; }
-    .search-bar input { width: 100%; }
-}
-
-/* RESPONSIVE HP */
+/* Tampilan HP (2 Kolom) */
 @media (max-width: 768px) {
     .menu-desktop { display: none; }
+    .options-grid { grid-template-columns: repeat(2, 1fr); } /* HP jadi 2 kolom */
+    .single-row { grid-template-columns: 1fr; }
+}
+
+/* Tampilan Desktop (3 Kolom) */
+@media (min-width: 769px) {
+    .hamburger { display: none; }
+    .menu-desktop { display: flex; gap: 25px; }
+    .menu-desktop a { color: white; text-decoration: none; font-size: 13px; font-weight: 600; }
+    .menu-desktop a:hover { color: #3b82f6; }
+    .search-bar { width: 250px; }
+    .search-bar input { width: 100%; }
+    .options-grid { grid-template-columns: repeat(3, 1fr); } /* Desktop jadi 3 kolom */
+    .banner-container { height: 350px; } /* Banner lebih tinggi di desktop */
 }
