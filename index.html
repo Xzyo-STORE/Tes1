@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XZYOSTORE | Lobby</title>
+    <title>XZYOSTORE | HOME</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
             <div class="store-logo">
-                <img src="logo-kamu.png" alt="XZYOSTORE">
+                <img src="logo-animasi-kamu.png" alt="XZYOSTORE">
             </div>
 
             <div class="nav-right">
@@ -46,26 +45,34 @@
 
     <main class="container">
         
-        <section class="banner-grid">
-            <div class="banner-box"><span>BANNER 1</span></div>
-            <div class="banner-box"><span>BANNER 2</span></div>
-            <div class="banner-box"><span>BANNER 3</span></div>
-            <div class="banner-box"><span>BANNER 4</span></div>
+        <section class="banner-container">
+            <div class="slider" id="mainSlider">
+                <div class="slide bg-1"><span>BANNER 1</span></div>
+                <div class="slide bg-2"><span>BANNER 2</span></div>
+                <div class="slide bg-3"><span>BANNER 3</span></div>
+                <div class="slide bg-4"><span>BANNER 4</span></div>
+            </div>
+            <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
         </section>
 
         <section class="category-section">
             <h2 class="category-title">BLOX FRUIT</h2>
-            <div class="options-row">
+            <div class="options-grid">
                 <a href="#" class="option-card">
-                    <div class="img-placeholder"></div>
+                    <div class="img-1x1"></div>
                     <span>JOKI</span>
                 </a>
                 <a href="#" class="option-card">
-                    <div class="img-placeholder"></div>
+                    <div class="img-1x1"></div>
                     <span>FRUIT</span>
                 </a>
                 <a href="#" class="option-card">
-                    <div class="img-placeholder"></div>
+                    <div class="img-1x1"></div>
                     <span>GAMEPASS</span>
                 </a>
             </div>
@@ -73,26 +80,26 @@
 
         <section class="category-section">
             <h2 class="category-title">TOP UP</h2>
-            <div class="options-row">
+            <div class="options-grid">
                 <a href="#" class="option-card">
-                    <div class="img-placeholder"></div>
+                    <div class="img-1x1"></div>
                     <span>FF</span>
                 </a>
                 <a href="#" class="option-card">
-                    <div class="img-placeholder"></div>
+                    <div class="img-1x1"></div>
                     <span>ML</span>
                 </a>
                 <a href="#" class="option-card">
-                    <div class="img-placeholder"></div>
+                    <div class="img-1x1"></div>
                     <span>PUBG</span>
                 </a>
             </div>
         </section>
 
         <section class="category-section">
-            <div class="options-row single">
+            <div class="options-grid single-row">
                 <a href="#" class="option-card">
-                    <div class="img-placeholder"></div>
+                    <div class="img-1x1"></div>
                     <span>ROBLOX</span>
                 </a>
             </div>
@@ -100,13 +107,6 @@
 
     </main>
 
-    <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const closeBtn = document.getElementById('closeBtn');
-        const sidebar = document.getElementById('sidebar');
-
-        menuBtn.onclick = () => sidebar.classList.add('active');
-        closeBtn.onclick = () => sidebar.classList.remove('active');
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
