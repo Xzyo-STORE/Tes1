@@ -3,116 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XZYO STORE | Lobby</title>
+    <title>XZYOSTORE | Lobby</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo-desktop">XZYO<span>STORE</span></div>
-            
-            <div class="mobile-header">
-                <div class="nav-mob-left">
-                    <div class="logo-circle">XZ</div>
-                    <span>STORE</span>
-                </div>
-                <div class="nav-mob-right">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <i class="fa-solid fa-bars" id="btnMenu"></i>
-                </div>
+            <div class="store-logo">
+                <img src="logo-kamu.png" alt="XZYOSTORE">
             </div>
 
-            <div class="nav-menu">
-                <div class="search-box">
+            <div class="nav-right">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Cari Game...">
                 </div>
-                <a href="#">HOME</a>
-                <a href="#">CEK TRANSAKSI</a>
-                <a href="#" class="btn-login">MASUK</a>
+                
+                <div class="menu-desktop">
+                    <a href="#">HOME</a>
+                    <a href="#">CEK TRANSAKSI</a>
+                    <a href="#">CHAT ADMIN</a>
+                </div>
+
+                <button id="menuBtn" class="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <span>MENU</span>
-            <i class="fa-solid fa-xmark" id="btnClose"></i>
-        </div>
-        <div class="sidebar-links">
-            <a href="#"><i class="fa-solid fa-house"></i> HOME</a>
-            <a href="#"><i class="fa-solid fa-receipt"></i> CEK TRANSAKSI</a>
-            <a href="#"><i class="fa-solid fa-headset"></i> CHAT ADMIN</a>
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <button id="closeBtn"><i class="fa-solid fa-xmark"></i></button>
+            <a href="#">HOME</a>
+            <a href="#">CEK TRANSAKSI</a>
+            <a href="#">CHAT ADMIN</a>
         </div>
     </div>
 
-    <main class="lobby-container">
+    <main class="container">
         
-        <section class="banner">
-            <div class="slider-wrapper">
-                <div class="arrow-left">&lt;</div>
-                <img src="https://via.placeholder.com/1200x400/0044ff/ffffff?text=PROMO+XZYO+STORE" alt="Banner">
-                <div class="arrow-right">&gt;</div>
-            </div>
+        <section class="banner-grid">
+            <div class="banner-box"><span>BANNER 1</span></div>
+            <div class="banner-box"><span>BANNER 2</span></div>
+            <div class="banner-box"><span>BANNER 3</span></div>
+            <div class="banner-box"><span>BANNER 4</span></div>
         </section>
 
-        <section class="game-section">
-            <h2 class="section-title">BLOX FRUIT</h2>
-            <div class="grid-3-col">
-                <a href="LINK_WEB_JOKI_KAMU" class="card-item">
-                    <img src="https://via.placeholder.com/150/1e293b/3b82f6?text=JOKI" alt="Joki">
+        <section class="category-section">
+            <h2 class="category-title">BLOX FRUIT</h2>
+            <div class="options-row">
+                <a href="#" class="option-card">
+                    <div class="img-placeholder"></div>
                     <span>JOKI</span>
                 </a>
-                <a href="LINK_WEB_FRUIT_KAMU" class="card-item">
-                    <img src="https://via.placeholder.com/150/1e293b/3b82f6?text=FRUIT" alt="Fruit">
+                <a href="#" class="option-card">
+                    <div class="img-placeholder"></div>
                     <span>FRUIT</span>
                 </a>
-                <a href="LINK_WEB_GP_KAMU" class="card-item">
-                    <img src="https://via.placeholder.com/150/1e293b/3b82f6?text=GP" alt="GAMEPASS">
+                <a href="#" class="option-card">
+                    <div class="img-placeholder"></div>
                     <span>GAMEPASS</span>
                 </a>
             </div>
         </section>
 
-        <section class="game-section">
-            <h2 class="section-title">TOP UP</h2>
-            <div class="grid-3-col">
-                <a href="#" class="card-item">
-                    <img src="https://via.placeholder.com/150/1e293b/3b82f6?text=FF" alt="FF">
+        <section class="category-section">
+            <h2 class="category-title">TOP UP</h2>
+            <div class="options-row">
+                <a href="#" class="option-card">
+                    <div class="img-placeholder"></div>
                     <span>FF</span>
                 </a>
-                <a href="#" class="card-item">
-                    <img src="https://via.placeholder.com/150/1e293b/3b82f6?text=ML" alt="ML">
+                <a href="#" class="option-card">
+                    <div class="img-placeholder"></div>
                     <span>ML</span>
                 </a>
-                <a href="#" class="card-item">
-                    <img src="https://via.placeholder.com/150/1e293b/3b82f6?text=PUBG" alt="PUBG">
+                <a href="#" class="option-card">
+                    <div class="img-placeholder"></div>
                     <span>PUBG</span>
                 </a>
             </div>
         </section>
 
-        <section class="game-section">
-            <a href="#" class="card-item wide">
-                <div class="flex-row">
-                    <img src="https://via.placeholder.com/100/1e293b/3b82f6?text=RBX" alt="Roblox">
+        <section class="category-section">
+            <div class="options-row single">
+                <a href="#" class="option-card">
+                    <div class="img-placeholder"></div>
                     <span>ROBLOX</span>
-                </div>
-            </a>
+                </a>
+            </div>
         </section>
 
     </main>
 
     <script>
-        const btnMenu = document.getElementById('btnMenu');
-        const btnClose = document.getElementById('btnClose');
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
         const sidebar = document.getElementById('sidebar');
 
-        btnMenu.onclick = () => sidebar.classList.add('active');
-        btnClose.onclick = () => sidebar.classList.remove('active');
+        menuBtn.onclick = () => sidebar.classList.add('active');
+        closeBtn.onclick = () => sidebar.classList.remove('active');
     </script>
 </body>
-            </html>
-            
+</html>
